@@ -43,10 +43,19 @@
         분석하기
       </button>
       <section>
-        <ol class="list-group list-group-numbered margin-top-20">
-          <li class="list-group-item">submit 버튼을 만들어주세요.</li>
-          <li class="list-group-item">reset 버튼을 만들어주세요.</li>
-          <li class="list-group-item">button 버튼을 만들어주세요.</li>
+        <article></article>
+        <ol
+          class="list-group list-group-numbered placeholder-glow margin-top-20"
+        >
+          <li class="list-group-item placeholder w-100">
+            submit 버튼을 만들어주세요.
+          </li>
+          <li class="list-group-item placeholder w-100">
+            reset 버튼을 만들어주세요.
+          </li>
+          <li class="list-group-item placeholder w-100">
+            button 버튼을 만들어주세요.
+          </li>
         </ol>
       </section>
     </div>
@@ -56,11 +65,24 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      function analysis() {
+      const analysis = () => {
+        const items = document.querySelectorAll(".list-group-item");
+        let delay = 1000;
+
         if (document.querySelector(".form-control").value.trim() !== "") {
           document.querySelector(".list-group").style.display = "block";
+
+          setTimeout(() => {
+            for (let i = 0; i < items.length; i++) {
+              delay += 1000;
+
+              setTimeout(() => {
+                items[i].classList.remove("placeholder");
+              }, delay);
+            }
+          }, 2000);
         }
-      }
+      };
     </script>
   </body>
 </html>

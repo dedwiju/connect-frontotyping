@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connect</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      .margin-top-20 {
+        margin-top: 20px;
+      }
+      .container {
+        text-align: center;
+      }
+      .list-group {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./logo.png" alt="logo" />
+      <h3>
+        개발 요구사항을 입력하시면<br />
+        AI가 분석해서 수정된 요구사항을<br />
+        추천해드립니다.
+      </h3>
+      <input
+        type="text"
+        class="form-control margin-top-20"
+        placeholder="버튼을 만들어주세요."
+      />
+      <button
+        type="button"
+        class="btn btn-primary margin-top-20"
+        onclick="analysis()"
+      >
+        분석하기
+      </button>
+      <section>
+        <ol class="list-group list-group-numbered margin-top-20">
+          <li class="list-group-item">submit 버튼을 만들어주세요.</li>
+          <li class="list-group-item">reset 버튼을 만들어주세요.</li>
+          <li class="list-group-item">button 버튼을 만들어주세요.</li>
+        </ol>
+      </section>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function analysis() {
+        if (document.querySelector(".form-control").value.trim() !== "") {
+          document.querySelector(".list-group").style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
